@@ -21,6 +21,13 @@ carRoute.get("/",(req,res)=>{
     })
 })
 
+carRoute.get('/:id', (req, res) => {
+    carSchema.findById(mongoose.Types.ObjectId(req.params.id), (err, data) => {
+        if(err) return err;
+        else res.json(data)
+    })
+})
+
 carRoute.route("/update-car/:id")
 .get((req,res)=>{
     carSchema.findById(mongoose.Types.ObjectId(req.params.id),(err,data)=>{

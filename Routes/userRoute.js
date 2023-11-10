@@ -20,6 +20,12 @@ userRoute.get("/",(req,res)=>{
             res.json(data);
     })
 })
+userRoute.get('/:id', (req, res) => {
+    carSchema.findById(mongoose.Types.ObjectId(req.params.id), (err, data) => {
+        if(err) return err;
+        else res.json(data)
+    })
+})
 userRoute.route("/profile/:id")
 .get((req,res)=>{
     userSchema.findById(mongoose.Types.ObjectId(req.params.id),(err,data)=>{

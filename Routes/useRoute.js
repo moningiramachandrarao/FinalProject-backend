@@ -10,4 +10,11 @@ useRoute.get("/",(req,res)=>{
             res.json(data);
     })
 })
+
+useRoute.get('/:id', (req, res) => {
+    carSchema.findById(mongoose.Types.ObjectId(req.params.id), (err, data) => {
+        if(err) return err;
+        else res.json(data)
+    })
+})
 module.exports = useRoute;
