@@ -6,10 +6,14 @@ const carSchema = new mongoose.Schema({
     "img4": {type:String},
     "img5": {type:String},
     "img6": {type:String},
-    "price":{type: Number},
+    "price":{type: String},
     "year": {type:Number},
     "model": {type:String},
-    "carName": {type:String}
+    "carName": {type:String},
+    "topSpeed":{type:String},
+    "enginetype":{type:String},
+    "enginecapacity":{type:String},
+    "milage":{type:String}
 }, {
     "collection": "car"
 })
