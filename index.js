@@ -5,6 +5,10 @@ const cors = require("cors");
 var carRoute=require("./Routes/carRoute");
 var useRoute=require("./Routes/useRoute");
 var userRoute=require("./Routes/userRoute");
+var maintainRoute=require("./Routes/maintainRoute");
+var repairRoute=require("./Routes/repairRoute");
+var upgradeRoute=require("./Routes/upgradeRoute");
+var loginRoute=require("./Routes/loginRoute");
 var mongoose =require("mongoose");
 mongoose.set("strictQuery",true)
 
@@ -21,7 +25,10 @@ app.use(cors());
 app.use("/carRoute",carRoute);
 app.use("/useRoute",useRoute);
 app.use("/userRoute",userRoute);
-
+app.use("/maintainRoute",maintainRoute);
+app.use("/repairRoute",repairRoute);
+app.use("/upgradeRoute",upgradeRoute);
+app.use("/loginRoute",loginRoute);
 app.listen(4000,()=>{
     console.log("Server started at 4000");
 })
